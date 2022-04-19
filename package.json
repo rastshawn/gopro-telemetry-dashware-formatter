@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "command-line-args": "^5.2.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "gopro-telemetry": "^1.1.37",
+    "gpmf-extract": "^0.2.5"
+  }
+}

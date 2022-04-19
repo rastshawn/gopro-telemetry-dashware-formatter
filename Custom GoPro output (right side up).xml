@@ -1,0 +1,70 @@
+<DataProfile version="2" readOnly="False" startFinishDistanceThreshold="40" showDistanceThreshold="True" ignoreFirstLap="True" ignoreLastLap="True" lapTimeHoldSecs="5" isChaseCamData="False" isAimData="False" isDriftBoxData="False" sortByTime="False" autoSync="False" autoSyncOffset="0">
+  <HeaderLines>
+    <HeaderLineIndex>0</HeaderLineIndex>
+  </HeaderLines>
+  <DataStartLineIndex>1</DataStartLineIndex>
+  <DataValueSeparators>,;	</DataValueSeparators>
+  <UseEuroDecimalFormat>False</UseEuroDecimalFormat>
+  <FileLineMatchers />
+  <Calculators>
+    <MathCalculator mathOperation="Divide" parameter="9.8" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>Accelerometer (z) [m/s2]</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Z Gs</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+    <MathCalculator mathOperation="Divide" parameter="9.8" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>Accelerometer (x) [m/s2]</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>X Gs</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+    <MathCalculator mathOperation="Divide" parameter="-9.8" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>Accelerometer (y) [m/s2]</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Y Gs</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+    <DegreesToCartesianConverter inputUnit="Degrees" outputUnit="Feet" algorithm="SphericalMercator">
+      <InputColumns>
+        <InputColumn>GPS (Long.) [deg]</InputColumn>
+        <InputColumn>GPS (Lat.) [deg]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>long_interp</OutputColumn>
+        <OutputColumn>lat_interp</OutputColumn>
+      </OutputColumns>
+    </DegreesToCartesianConverter>
+    <SpeedConverter inputUnit="m/s" outputUnit="MPH">
+      <InputColumns>
+        <InputColumn>GPS (2D speed) [m/s]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>gps speed mph</OutputColumn>
+      </OutputColumns>
+    </SpeedConverter>
+  </Calculators>
+  <ColumnMappings>
+    <ColumnMapping inputColumnText="cts" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
+    <ColumnMapping inputColumnText="Z Gs" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Vertical Gs" />
+    <ColumnMapping inputColumnText="X Gs" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Lateral Gs" />
+    <ColumnMapping inputColumnText="Y Gs" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Acceleration Gs" />
+    <ColumnMapping inputColumnText="GPS (Lat.) [deg]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Degrees)" />
+    <ColumnMapping inputColumnText="GPS (Long.) [deg]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Degrees)" />
+    <ColumnMapping inputColumnText="long_interp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Feet)" />
+    <ColumnMapping inputColumnText="lat_interp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Feet)" />
+    <ColumnMapping inputColumnText="gps speed mph" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (MPH)" />
+  </ColumnMappings>
+</DataProfile>
