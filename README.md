@@ -10,9 +10,9 @@ Also included are templates for using the extracted data for gauge overlays with
 
 ## Installation
 ### Using a release
-You will need [ffmpeg](https://ffmpeg.org/) in your path. A guide to do so can be found [here](). 
+You will need [ffmpeg](https://ffmpeg.org/) in your path. A guide to do so can be found [here](https://www.wikihow.com/Install-FFmpeg-on-Windows). 
 
-Download and extract a [release](), install ffmpeg, and drag a video from your GoPro onto the script. 
+Download and extract a [release](https://github.com/rastshawn/gopro-telemetry-dashware-formatter/releases), install ffmpeg, and drag a video from your GoPro onto the script. 
 
 The telemetry CSV will appear in the same folder as the input video. This will work for videos copied directly from the camera as well as videos imported via Quik - it will not work for videos already edited in Quik, though, so you'll need to do trimming after the videos have been imported into DashWare. 
 
